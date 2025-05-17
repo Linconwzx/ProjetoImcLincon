@@ -17,14 +17,14 @@ export default function App() {
 
     let msg ="";
   if(result < 18.5){
-    msg = " - Abaixo do Peso"
+    msg = " - (Abaixo do Peso)"
   } else if (result >= 18.5 && result <= 24.99){
-    msg = " - Peso Ideal: "
+    msg = " - (Peso Ideal) "
   }
   if(result >= 25 && result <= 29.99){
     msg = " - Levemente acima do peso"
   } else if (result >= 30 && result <= 34.99){
-    msg= " - Obesidade grau I"
+    msg= " - (Obesidade grau I)"
   }
   if(result >= 35 && result <= 39.99){
     msg=" - Obesidade grau II (severa)"
@@ -40,7 +40,7 @@ export default function App() {
       <Text style={styles.titulo}>IMC</Text>
       <StatusBar style="auto" />
         <View style={styles.bloco}>
-            <Text style={styles.label}>Peso</Text>
+            <Text style={styles.label}>Peso:</Text>
               <TextInput 
               style={styles.input}
               keyboardType='numeric'
@@ -49,7 +49,7 @@ export default function App() {
               />
         </View>
         <View style={styles.bloco}>
-            <Text style={styles.label}>Altura</Text>
+            <Text style={styles.label}>Altura:</Text>
               <TextInput 
               style={styles.input}
               keyboardType='numeric'
@@ -65,7 +65,7 @@ export default function App() {
         </View>
 
         <View style={styles.bloco}>
-              <Text style={styles.aviso}>{resultado}</Text>
+              <Text style={styles.valor}>{resultado}</Text>
         </View>
 
     </View>
@@ -75,22 +75,24 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ccc',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   input: {
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#fff',
     color: 'black',
     width: 250,
     height: 50,
-    borderWidth: 1,
-    borderRadius: 10,
+    borderWidth: 1.5,
+    borderRadius: 25,
+    paddingLeft: 20,
+    fontSize: 15
   },
   titulo: {
     color: 'black',
-    marginBottom: 80,
-    fontSize: 20,
+    marginBottom:50,
+    fontSize: 30,
    
   },
   bloco: {
@@ -101,29 +103,28 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     color: 'black',
     alignItems: 'center',
-    width: 250,
+    width: 180,
     height: 50,
-    borderWidth: 1,
-    borderRadius: 10,
+    borderWidth: 1.5,
+    borderRadius: 25,
     justifyContent: 'center',
+    
   },
   label: {
-    paddingBottom:10,
-    paddingTop: 20,
+    paddingBottom:13,
+    paddingTop: 18,
     color: 'black',
-    fontSize: 20,
-    fontWeight: 'bold',
-    paddingLeft: 10,
+    fontSize: 22,
+    paddingLeft: 3,
+    width: 70,
+  
+    
   },
-  aviso:{
-    marginTop: 30,
-    backgroundColor: 'black',
-    color:'white',
-    width: 300,
-    height: 50,
-    borderRadius: 50,
+  valor: {
+    marginTop: 35,
+    fontSize: 20,
+    width: 340,
     textAlign: 'center',
-    fontWeight: 'bold',
   }
 
 
